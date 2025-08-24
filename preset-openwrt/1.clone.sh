@@ -32,3 +32,14 @@ git clone --depth 1 https://github.com/xiaorouji/openwrt-passwall-packages.git p
 git clone --depth 1 https://github.com/xiaorouji/openwrt-passwall.git && mv openwrt-passwall/luci-app-passwall ./ && rm -rf openwrt-passwall
 git clone --depth 1 https://github.com/xiaorouji/openwrt-passwall2.git && mv openwrt-passwall2/luci-app-passwall2 ./ && rm -rf openwrt-passwall2
 git clone --depth 1 https://github.com/vernesong/OpenClash.git && mv OpenClash/luci-app-openclash ./ && rm -rf OpenClash
+ IPv6 和 NAT6 支持
+git clone --depth 1 https://github.com/Ausaci/luci-app-nat6-helper.git $SUPPLY_DIR/luci-app-nat6-helper
+
+# 广告屏蔽大师 AdGuardHome
+git clone --depth 1 https://github.com/rufengsuixing/luci-app-adguardhome.git $SUPPLY_DIR/luci-app-adguardhome
+
+# Turbo ACC 网络加速
+git clone --depth 1 https://github.com/chenmozhijin/turboacc.git $SUPPLY_DIR/turboacc
+
+# 确保 DDNS 插件（官方源一般已包含，但可确保最新）
+git clone --depth 1 https://github.com/small-5/luci-app-ddns-go.git $SUPPLY_DIR/luci-app-ddns-go
