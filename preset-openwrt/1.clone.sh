@@ -35,4 +35,4 @@ git clone --depth 1 https://github.com/vernesong/OpenClash.git && mv OpenClash/l
 git clone --depth 1 https://ghfast.top/https://github.com/Ausaci/luci-app-nat6-helper.git $SUPPLY_DIR/luci-app-nat6-helper
 git clone --depth 1 https://ghfast.top/https://github.com/rufengsuixing/luci-app-adguardhome.git $SUPPLY_DIR/luci-app-adguardhome
 git clone --depth 1 https://ghfast.top/https://github.com/chenmozhijin/turboacc.git $SUPPLY_DIR/turboacc
-git clone --depth 1 https://ghfast.top/https://github.com/small-5/luci-app-ddns-go.git $SUPPLY_DIR/luci-app-ddns-go
+
