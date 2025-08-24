@@ -32,15 +32,14 @@ git clone --depth 1 https://github.com/xiaorouji/openwrt-passwall-packages.git p
 git clone --depth 1 https://github.com/xiaorouji/openwrt-passwall.git && mv openwrt-passwall/luci-app-passwall ./ && rm -rf openwrt-passwall
 git clone --depth 1 https://github.com/xiaorouji/openwrt-passwall2.git && mv openwrt-passwall2/luci-app-passwall2 ./ && rm -rf openwrt-passwall2
 git clone --depth 1 https://github.com/vernesong/OpenClash.git && mv OpenClash/luci-app-openclash ./ && rm -rf OpenClash
- # ---------- 额外插件 ----------
-# IPv6 & NAT6 Helper
-git clone --depth 1 https://mirror.ghproxy.com/https://github.com/Ausaci/luci-app-nat6-helper.git $SUPPLY_DIR/luci-app-nat6-helper
+ # IPv6 & NAT6 Helper
+git clone --depth 1 https://github.com/Ausaci/luci-app-nat6-helper.git $SUPPLY_DIR/luci-app-nat6-helper
 
 # AdGuardHome
-git clone --depth 1 https://mirror.ghproxy.com/https://github.com/rufengsuixing/luci-app-adguardhome.git $SUPPLY_DIR/luci-app-adguardhome
+git clone --depth 1 https://github.com/rufengsuixing/luci-app-adguardhome.git $SUPPLY_DIR/luci-app-adguardhome
 
 # TurboACC
-git clone --depth 1 https://mirror.ghproxy.com/https://github.com/chenmozhijin/turboacc.git $SUPPLY_DIR/turboacc
+git clone --depth 1 https://github.com/chenmozhijin/turboacc.git $SUPPLY_DIR/turboacc
 
 # DDNS-Go
-git clone --depth 1 https://mirror.ghproxy.com/https://github.com/small-5/luci-app-ddns-go.git $SUPPLY_DIR/luci-app-ddns-go
+git clone --depth 1 https://github.com/small-5/luci-app-ddns-go.git $SUPPLY_DIR/luci-app-ddns-go
