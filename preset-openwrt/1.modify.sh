@@ -24,3 +24,14 @@ modify_lax_category 'package/feeds/supply/luci-app-xray-status/Makefile'
 
 # replace geodata source
 . $(dirname $0)/../extra-files/update-geodata.sh
+
+# 启用 IPv6 和 NAT6 支持
+sed -i 's/# CONFIG_PACKAGE_ipv6helper is not set/CONFIG_PACKAGE_ipv6helper=y/g' .config
+sed -i 's/# CONFIG_PACKAGE_luci-proto-ipv6 is not set/CONFIG_PACKAGE_luci-proto-ipv6=y/g' .config
+sed -i 's/# CONFIG_PACKAGE_kmod-ipt-nat6 is not set/CONFIG_PACKAGE_kmod-ipt-nat6=y/g' .config
+sed -i 's/# CONFIG_PACKAGE_luci-app-nat6-helper is not set/CONFIG_PACKAGE_luci-app-nat6-helper=y/g' .config
+
+# 替换 dnsmasq 为 dnsmasq-full（确保 DNS 功能完整）
+if ! grep -q "dnsmasq-full" include/target.mk; then
+    sed -i 's/dnsmasq/dnsmasq-full/g' include/target.mk
+fi
