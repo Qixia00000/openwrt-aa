@@ -17,4 +17,5 @@ echo "CONFIG_PACKAGE_luci-app-nat6-helper=y">> .config
 echo "CONFIG_PACKAGE_luci-app-adguardhome=y">> .config
 echo "CONFIG_PACKAGE_adguardhome=y"         >> .config
 echo "CONFIG_PACKAGE_luci-app-turboacc=y"   >> .config
-echo "CONFIG_PACKAGE_luci-app-ddns-go=y"    >> .config
+echo "CONFIG_PACKAGE_luci-app-ddns=y"    >> .config
+sed -i '/luci-i18n-turboacc-zh-cn/d' .config
