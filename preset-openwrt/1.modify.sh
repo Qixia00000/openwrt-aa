@@ -1,26 +1,22 @@
 #!/usr/bin/env bash
 
-# modify login IP
-#sed -i 's/192.168.1.1/192.168.10.1/g' package/base-files/files/bin/config_generate
-
-# copy uci-defaults script(s)
+# 1. 复制初始化脚本（可选）
 mkdir -p files/etc/uci-defaults
-cp $(dirname $0)/uci-scripts/* files/etc/uci-defaults/
+cp $(dirname $0)/uci-scripts/* files/etc/uci-defaults/ 2>/dev/null || true
 
-# modify default package(s)
+# 2. 默认用 dnsmasq-full
 if ! grep -q "dnsmasq-full" include/target.mk; then
     sed -i 's/dnsmasq/dnsmasq-full/g' include/target.mk
 fi
 
-# modify luci-app-xray category
-modify_lax_category() {
-    local mk=$1
-    [ -e $mk ] || return
-    sed -i 's/SECTION:=Custom/CATEGORY:=LuCI/g' $mk
-    sed -i 's/CATEGORY:=Extra packages/SUBMENU:=3. Applications/g' $mk
-}
-modify_lax_category 'package/feeds/supply/luci-app-xray-core/Makefile'
-modify_lax_category 'package/feeds/supply/luci-app-xray-status/Makefile'
-
-# replace geodata source
-. $(dirname $0)/../extra-files/update-geodata.sh
+# 3. 确保关键包被编译
+cat >> .config <<EOF
+CONFIG_PACKAGE_dnsmasq-full=y
+CONFIG_PACKAGE_adblock=y
+CONFIG_PACKAGE_adblock-fast=y
+CONFIG_PACKAGE_bird1-ipv6=y
+CONFIG_PACKAGE_ddns-scripts=y
+CONFIG_PACKAGE_ddns-scripts-services=y
+CONFIG_PACKAGE_dnscrypt-proxy2=y
+CONFIG_PACKAGE_nextdns-client=y
+EOF
